@@ -1,31 +1,19 @@
 // Write your Character component here
 import React from 'react'
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
-} from 'reactstrap';
 import styled from 'styled-components'
+import {StyledContainer, Card} from './Styled'
 
 
 const Character = props => {
     
     return (
-        <div>
         <Card>
-        <CardImg top width="100%" src={props.image} />
-        <CardBody>
-          <CardTitle>{props.name}</CardTitle>
-          <CardSubtitle>{props.status}</CardSubtitle>
-          <CardText>{props.species}</CardText>
-          <CardText>{props.gender}</CardText>
-        </CardBody>
-      </Card>
-            {/* <img src = {props.image}></img>
+            <img src = {props.image} alt = "Rick & Morty character"></img>
             <h2>{props.name}</h2>
-            <p>{props.status}</p>
-            <p>{props.species}</p>
-            <p>{props.gender} </p> */}
-        </div>
+            <p>Status: {props.status}</p>
+            <p>Species: {props.species}</p>
+            <p>Gender: {props.gender} </p>
+        </Card>
     )
 }
 

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Character from './components/Character'
 import './App.css';
 import styled from 'styled-components'
-import {StyledContainer} from './components/Styled.jsx'
+import {StyledContainer, Card} from './components/Styled.jsx'
 
 const App = (props) => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -24,6 +24,7 @@ const App = (props) => {
     })
     .catch(err => {
       console.log(`Error Message: ${err}`)
+      setErrorState(`${err}`)
     })
   }, []);
    
@@ -33,11 +34,13 @@ const App = (props) => {
     <StyledContainer>
     <div className="App">
       <h1 className="Header">Rick & Morty Characters</h1>
+     
       {characterData.map(character => {
         return(
           <Character key={character.id} name ={character.name} image={character.image} status = {character.status} species ={character.species} gender={character.gender} />
         )
       })}
+      
     </div>
     </StyledContainer>
   );
