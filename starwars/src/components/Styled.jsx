@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const StyledContainer = styled.div`
     font-family: 'Balsamiq Sans', cursive;
     margin: 0 auto;

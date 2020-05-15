@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Character from './components/Character'
 import './App.css';
-import styled from 'styled-components'
-import {StyledContainer, Card} from './components/Styled.jsx'
+import {StyledContainer} from './components/Styled.jsx'
 
 const App = (props) => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -18,9 +17,9 @@ const App = (props) => {
      axios
     .get(`https://rickandmortyapi.com/api/character/`)
     .then(response => {
-      console.log(response.data.results)
+      // console.log(response.data.results)
       setCharacterData(response.data.results)
-      console.log(characterData)
+      // console.log(characterData)
     })
     .catch(err => {
       console.log(`Error Message: ${err}`)
@@ -37,7 +36,7 @@ const App = (props) => {
      
       {characterData.map(character => {
         return(
-          <Character key={character.id} name ={character.name} image={character.image} status = {character.status} species ={character.species} gender={character.gender} />
+          <Character key={character.id} name ={character.name} image={character.image} status = {character.status} species ={character.species} gender={character.gender} error={errorState} />
         )
       })}
       
