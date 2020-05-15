@@ -1,13 +1,16 @@
 // Write your Character component here
 import React from 'react'
-import axios from 'axios'
+
 
 const Character = props => {
+    
     return (
         <div>
-            {/* {characterData.map(character => (
-                <h2>{character.name}</h2>
-            ))} */}
+            <img src = {props.image}></img>
+            <h2>{props.name}</h2>
+            <p>{props.status}</p>
+            <p>{props.species}</p>
+            <p>{props.gender} </p>
         </div>
     )
 }
